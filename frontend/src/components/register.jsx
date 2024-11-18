@@ -8,6 +8,7 @@ function Register() {
     name: '',
     email: '',
     phone: '',
+    password: '',
     position: '',
     imageUrl: '',
   });
@@ -42,6 +43,7 @@ function Register() {
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
+      password: formData.password,
       position: formData.position,
       imageUrl: formData.imageUrl || '', // Optional image URL
     };
@@ -58,7 +60,7 @@ function Register() {
   
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="bg-white rounded-lg shadow-md max-w-lg w-full flex p-6">
+      <div className="bg-white rounded-lg shadow-md max-w-lg w-full flex p-1">
         <div className="flex-shrink-0 w-1/3 flex justify-center items-center">
           {preview ? (
             <img src={preview} alt="Employee Preview" className="w-32 h-32 rounded-full object-cover" />
@@ -83,6 +85,7 @@ function Register() {
                 onChange={handleChange}
                 required
                 className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder='Enter Employee ID'
               />
             </div>
             <div>
@@ -95,6 +98,7 @@ function Register() {
                 onChange={handleChange}
                 required
                 className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder='Enter Name'
               />
             </div>
             <div>
@@ -107,6 +111,7 @@ function Register() {
                 onChange={handleChange}
                 required
                 className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder='Enter Email'
               />
             </div>
             <div>
@@ -119,6 +124,20 @@ function Register() {
                 onChange={handleChange}
                 required
                 className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder='Enter Phone'
+              />
+            </div>
+            <div className="mb-4">
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+                className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Password"
               />
             </div>
             <div>
@@ -131,6 +150,7 @@ function Register() {
                 onChange={handleChange}
                 required
                 className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder='Enter Position'
               />
             </div>
             <div>

@@ -50,15 +50,15 @@ export default function Layout() {
               Register
             </Link>
           </li>
-          {/* <li>
+          <li>
             <Link 
-              to="/employeespage" 
+              to="/Loginpage"
               className={`font-medium hover:text-green-500 ${location.pathname === '/employeespage' ? 'text-green-500' : 'text-blue-500'} block md:inline p-4`}
               onClick={() => setIsMenuOpen(false)} // Close menu on link click
             >
-              Employees
+              Login
             </Link>
-          </li> */}
+          </li>
         </ul>
       </nav>
 

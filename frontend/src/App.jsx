@@ -10,6 +10,7 @@ import './App.css';
 import Landingpage from './pages/landingpage';
 import Registerpage from './pages/registerpage';
 import Updatemlployeepage from './pages/Updatemlployeepage';
+import Loginpage from './pages/Loginpage';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/employeespage" element={<Employeespage />} />
         <Route path="/employee/:id" element={<Employeespage />} />
         <Route path="/UpdateEmployee/:id" element={<Updatemlployeepage />} />
+        <Route path="/loginpage" element={<Loginpage />} />
   
       </Routes>
 

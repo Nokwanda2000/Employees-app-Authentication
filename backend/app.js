@@ -24,9 +24,9 @@ app.get('/', (req, res) => {
 // Add Employee (with a photo URL instead of uploading a file)
 app.post('/employees', async (req, res) => {
   try {
-    const { id, name, email, phone, position, imageUrl } = req.body;
+    const { id, name, email, phone,password, position, imageUrl } = req.body;
     
-    if (!id || !name || !email || !phone || !position) {
+    if (!id || !name || !email || !phone || !password || !position || !imageUrl) {
       return res.status(400).send('All fields are required!');
     }
 
@@ -35,6 +35,7 @@ app.post('/employees', async (req, res) => {
       name, 
       email, 
       phone, 
+      password,
       position, 
       imageUrl: imageUrl || '',  // Use a default empty string if no image URL is provided
     };
@@ -79,8 +80,8 @@ app.get('/employees/:id', async (req, res) => {
 // Update Employee
 app.put('/employees/:id', async (req, res) => {
   try {
-    const { name, email, phone, position, imageUrl } = req.body;
-    const updatedData = { name, email, phone, position, imageUrl };
+    const { name, email, phone, password, position, imageUrl } = req.body;
+    const updatedData = { name, email, phone, password, position, imageUrl };
 
     await db.collection('employees').doc(req.params.id).update(updatedData);
     res.status(200).send('Employee updated successfully');
